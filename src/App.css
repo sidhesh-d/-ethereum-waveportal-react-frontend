@@ -1,0 +1,99 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.header {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bio {
+  text-align: center;
+  color: gray;
+  margin-top: 16px;
+}
+.inline {
+  display: inline-block;
+}
+
+.waveButton {
+  position: relative;
+  top: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  border: 1;
+  border-color: gold;
+  border-radius: 5px;
+  width: 50px;
+  font-size: 30px;
+  margin-top: 8px;
+  
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.message {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 250px;
+}
+.menu-fish {
+  border-bottom: 2px solid #000;
+  border-top: 1px solid #000;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  margin-bottom: 5px;
+  clear: both;
+  overflow: hidden;
+}
+.menu-fish p {
+  margin: 0;
+  font-size: 1rem;
+}
+.menu-fish .fish-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight:  normal;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.menu-fish .price {
+  font-size: 1rem;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  float: right;
+  position: relative;
+  top: -20px;
+}
+.wrapper {
+  width:100%;
+}
+.thanks {
+  width: 10%;
+  display: inline-block;
+  margin-left: 10px;
+}
+.bold {
+  font-weight: bold;
+}
+
+.gold {
+  color: darkgoldenrod;
+}
