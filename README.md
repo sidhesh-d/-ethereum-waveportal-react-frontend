@@ -1,6 +1,10 @@
-React Web App to interact with ethereum wave portal contract
+# React Web App to store messages in a smart contract on Ethereum blockchain.
+### The smart contract picks a message sender randomly and sends ether to message sender.
 
-When in the shell you can run any of the following scripts:
-
-### `yarn build`
-### `yarn start`
+### To run
+```shell
+yarn install
+yarn build
+yarn start
+```
+### Connect your wallet on Rinkeby network

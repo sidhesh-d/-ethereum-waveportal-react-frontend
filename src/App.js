@@ -49,7 +49,7 @@ const App = () => {
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
       console.log("Connected", accounts[0]);
-      setCurrentAccount(accounts[0]); 
+      setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error)
     }
@@ -66,13 +66,12 @@ const getContractBalance = async () => {
 
 
   useEffect(() => {
-  let wavePortalContract;
   checkIfWalletIsConnected();
   getAllWaves();
   getTotalWaves();
   getTotalWavesFromCurrentAddr();
   getContractBalance();
-}, []);
+}, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   const wave = async () => {
     try {
@@ -92,13 +91,13 @@ const getContractBalance = async () => {
         const message = myContainer.current.value;
         console.log(message);
         let waveTxn = await wavePortalContract.wave(
-          message, 
+          message,
           { gasLimit: 300000 }
         );
         console.log('Mining...'+waveTxn.hash);
         const receipt = await waveTxn.wait();
         console.log('receipt: '+JSON.stringify(receipt));
-        
+
         console.log('Mined...'+waveTxn.hash);
         const newBalance = await getContractBalance();
         console.log('newBalance '+newBalance);
@@ -175,31 +174,31 @@ const getContractBalance = async () => {
 
       <div className="dataContainer">
         <div className="header">
-        👋 Hey there!
+        <span role="img" aria-label="wave">👋</span> Hey there!
         </div>
 
         <div className="bio bold">
         Send a wave to Esh and you might win some ether.</div>
-        <div className="bio">Connect your Ethereum wallet, type a message and click 👋!
+        <div className="bio">Connect your Ethereum wallet, type a message and click <span role="img" aria-label="wave">👋</span>!
         </div>
 
-        
+
         <div className="center">
-          <input name="message" 
-          type="text" 
+          <input name="message"
+          type="text"
           className="message"
           ref={myContainer}
           placeholder="Type a message"/>&nbsp;
           <button className="waveButton" onClick={wave} >
-            👋
+            <span role="img" aria-label="wave">👋</span>
           </button>
           <br/>
           <span name="message" className="bio gold">{message}</span>
-          
+
           <div className="bio">Total waves so far:{totalWaves}
           </div>
 
-          <div className="bio">Waves from you:{totalWavesFromCurrentAddr} 
+          <div className="bio">Waves from you:{totalWavesFromCurrentAddr}
           </div>
 
 
@@ -209,11 +208,11 @@ const getContractBalance = async () => {
         <ul className="fishes">
         {allWaves.map((wave, index) => {
           return (
-            
+
              <li className="menu-fish">
              <span className="price">{wave.timestamp.toString()}</span>
               <p>From: <b>{wave.address}</b></p>
-              
+
               <p>Message: <b>{wave.message}</b></p>
             </li>)
         })}
@@ -231,7 +230,7 @@ const getContractBalance = async () => {
     </div>
   );
 
-  
+
 }
 
 export default App;
